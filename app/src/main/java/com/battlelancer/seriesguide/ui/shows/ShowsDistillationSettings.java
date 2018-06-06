@@ -10,12 +10,12 @@ import android.preference.PreferenceManager;
  */
 public class ShowsDistillationSettings {
 
-    static String KEY_SORT_ORDER = "com.battlelancer.seriesguide.sort.order";
-    static String KEY_SORT_FAVORITES_FIRST = "com.battlelancer.seriesguide.sort.favoritesfirst";
-    static String KEY_FILTER_FAVORITES = "com.battlelancer.seriesguide.filter.favorites";
-    static String KEY_FILTER_UNWATCHED = "com.battlelancer.seriesguide.filter.unwatched";
-    static String KEY_FILTER_UPCOMING = "com.battlelancer.seriesguide.filter.upcoming";
-    static String KEY_FILTER_HIDDEN = "com.battlelancer.seriesguide.filter.hidden";
+    public static String KEY_SORT_ORDER = "com.battlelancer.seriesguide.sort.order";
+    public static String KEY_SORT_FAVORITES_FIRST = "com.battlelancer.seriesguide.sort.favoritesfirst";
+    public static String KEY_FILTER_FAVORITES = "com.battlelancer.seriesguide.filter.favorites";
+    public static String KEY_FILTER_UNWATCHED = "com.battlelancer.seriesguide.filter.unwatched";
+    public static String KEY_FILTER_UPCOMING = "com.battlelancer.seriesguide.filter.upcoming";
+    public static String KEY_FILTER_HIDDEN = "com.battlelancer.seriesguide.filter.hidden";
 
     /**
      * Builds an appropriate SQL sort statement for sorting shows.
@@ -52,27 +52,27 @@ public class ShowsDistillationSettings {
         return PreferenceManager.getDefaultSharedPreferences(context).getInt(KEY_SORT_ORDER, 0);
     }
 
-    static boolean isSortFavoritesFirst(Context context) {
+    public static boolean isSortFavoritesFirst(Context context) {
         return PreferenceManager.getDefaultSharedPreferences(context)
                 .getBoolean(KEY_SORT_FAVORITES_FIRST, true);
     }
 
-    static boolean isFilteringFavorites(Context context) {
+    public static boolean isFilteringFavorites(Context context) {
         return PreferenceManager.getDefaultSharedPreferences(context)
                 .getBoolean(KEY_FILTER_FAVORITES, false);
     }
 
-    static boolean isFilteringUnwatched(Context context) {
+    public static boolean isFilteringUnwatched(Context context) {
         return PreferenceManager.getDefaultSharedPreferences(context)
                 .getBoolean(KEY_FILTER_UNWATCHED, false);
     }
 
-    static boolean isFilteringUpcoming(Context context) {
+    public static boolean isFilteringUpcoming(Context context) {
         return PreferenceManager.getDefaultSharedPreferences(context)
                 .getBoolean(KEY_FILTER_UPCOMING, false);
     }
 
-    static boolean isFilteringHidden(Context context) {
+    public static boolean isFilteringHidden(Context context) {
         return PreferenceManager.getDefaultSharedPreferences(context)
                 .getBoolean(KEY_FILTER_HIDDEN, false);
     }
