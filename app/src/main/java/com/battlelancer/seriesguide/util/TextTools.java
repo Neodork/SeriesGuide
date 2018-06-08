@@ -64,7 +64,7 @@ public class TextTools {
      */
     @NonNull
     public static String getEpisodeTitle(Context context, @Nullable String title, int episode) {
-        return TextUtils.isEmpty(title)
+        return (title == null || title.length() == 0)
                 ? context.getString(R.string.episode_number, episode)
                 : title;
     }
