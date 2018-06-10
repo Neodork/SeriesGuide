@@ -34,6 +34,7 @@ buildscript {
     repositories {
         jcenter()
         google()
+        jcenter()
         mavenCentral()
         maven { url 'https://maven.fabric.io/public' }
     }
@@ -67,8 +68,8 @@ apply plugin: "org.sonarqube"
 
 allprojects {
     repositories {
-        jcenter()
         google()
+        jcenter()
         mavenCentral()
         maven { url 'https://maven.fabric.io/public' }
     }
