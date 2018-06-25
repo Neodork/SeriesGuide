@@ -34,6 +34,8 @@ public class DisplaySettings {
 
     public static final String NUMBERFORMAT_ENGLISHLOWER = "englishlower";
 
+    public static final String NUMBERFORMAT_ENGLISHUPPER = "englishupper";
+
     public static final String KEY_SHOWS_TIME_OFFSET = "com.battlelancer.seriesguide.timeoffset";
 
     public static final String KEY_NO_RELEASED_EPISODES = "onlyFutureEpisodes";
