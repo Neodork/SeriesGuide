@@ -63,6 +63,20 @@ sonarqube {
     androidVariant 'pureDebug'
 }
 
+plugins {
+    id "org.sonarqube" version "2.6"
+}
+
+sonarqube {
+    properties {
+        property "sonar.projectName", "SeriesGuide"
+        property "sonar.projectKey", "seriesguide:asv"
+        property "sonar.host.url", "https://sonar.neodork.org"
+        property "sonar.sourceEncoding", "UTF-8"
+    }
+    androidVariant 'pureDebug'
+}
+
 apply plugin: 'com.github.ben-manes.versions'
 apply plugin: "org.sonarqube"
 
