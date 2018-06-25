@@ -234,25 +234,22 @@ public class JsonImportTask extends AsyncTask<Void, Integer, Integer> {
                 return SUCCESS;
             }
 
-            FileInputStream in;
+            FileInputStream in = null;
             try {
                 in = new FileInputStream(backupFile);
+                importFromJson(type, in);
+                in.close();
             } catch (FileNotFoundException e) {
                 Timber.e(e, "Backup file not found.");
                 errorCause = e.getMessage();
                 return ERROR_FILE_ACCESS;
-            }
-
-            clearExistingData(type);
-
-            // Access JSON from backup file and try to import data
-            try {
-                importFromJson(type, in);
             } catch (JsonParseException | IOException | IllegalStateException e) {
                 // the given Json might not be valid or unreadable
                 Timber.e(e, "JSON show import failed");
                 errorCause = e.getMessage();
                 return ERROR;
+            } finally {
+                clearExistingData(type);
             }
         }
 
